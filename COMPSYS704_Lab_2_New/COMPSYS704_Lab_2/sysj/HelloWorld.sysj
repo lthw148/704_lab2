@@ -1,0 +1,5 @@
+CD->{ 
+	signal A;
+	await(A);
+	System.out.println("Got a");
+}

@@ -1,0 +1,9 @@
+<System xmlns="http://systemjtechnology.com">
+	<SubSystem Name="Lab2" Local="true">
+		<ClockDomain Name="MyABROCD" Class="ABROCD">
+			<oSignal Name="A" IP="127.0.0.1" Class="com.systemj.netapi.TCPSender" Port="4000"/>
+			<oSignal Name="B" IP="127.0.0.1" Class="com.systemj.netapi.TCPSender" Port="4001"/>
+			<oSignal Name="R" IP="127.0.0.1" Class="com.systemj.netapi.TCPSender" Port="4002"/>
+		</ClockDomain>
+	</SubSystem>
+</System>
