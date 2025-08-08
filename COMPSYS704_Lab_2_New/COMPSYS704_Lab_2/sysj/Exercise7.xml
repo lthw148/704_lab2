@@ -1,0 +1,12 @@
+<System xmlns="http://systemjtechnology.com">
+	<SubSystem Name="SS1" Local="true">
+		<ClockDomain Name="CD1" Class="CD1">
+			<iSignal Name="A" Class="com.systemj.ipc.InputJSON" IP="127.0.0.1" Port="100" Type="java.lang.Integer"/>
+			<oSignal Name="O1" Class="com.systemj.ipc.OutputJSON" IP="127.0.0.1" Port="200" />
+			<oSignal Name="O2" Class="com.systemj.ipc.OutputJSON" IP="127.0.0.1" Port="100" To="CD2.I"/>
+		</ClockDomain>
+			<ClockDomain Name="CD2" Class="CD2">
+			<iSignal Name="I" Class="com.systemj.ipc.InputJSON" IP="127.0.0.1" Port="100" Type="java.lang.Integer"/>
+		</ClockDomain>
+	</SubSystem>
+</System>

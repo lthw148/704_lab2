@@ -1,0 +1,18 @@
+CD1(input Integer signal A; output Integer signal O1,O2;)->{
+	int counter;
+	loop {
+		await(A);
+		pause;
+		emit O1(counter++);
+		pause;
+		emit O2(counter++);
+		pause;
+	}
+}
+
+CD2(input Integer signal I;)->{
+	loop{
+		await(I);
+		System.out.println("Received "+#I);
+	}
+}

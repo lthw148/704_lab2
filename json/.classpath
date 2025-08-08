@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre8"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/TEMP/704_lab2/json/src/gson-2.8.1-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/TEMP/704_lab2/COMPSYS704_Lab_2_New/COMPSYS704_Lab_2/lib/gson-2.8.1.jar"/>
+	<classpathentry kind="lib" path="C:/TEMP/704_lab2/COMPSYS704_Lab_2_New/COMPSYS704_Lab_2/lib/sysjnetapi-SNAPSHOT-e1801c7.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

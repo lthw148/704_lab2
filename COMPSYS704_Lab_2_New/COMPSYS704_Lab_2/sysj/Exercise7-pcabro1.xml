@@ -23,6 +23,8 @@
 		<ClockDomain Name="BufferCD" Class="BufferCD">
 
 			<!-- TODO: Write Buffer clock-domain's channel connections here -->
+			<iChannel Name="producerChannel" From="PabroCD.producerChannel" />
+			<oChannel Name="consumerChannel" To="CabroCD.consumerChannel" />
 
 		</ClockDomain>
 	</SubSystem>

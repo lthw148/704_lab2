@@ -84,8 +84,15 @@ reaction Buffer(: input int channel producerChannel, output int channel consumer
 			present(bufferNotFull){
 
 				/* Task 1: receive from producerChannel */
+				
+				receive producerChannel;
+				System.out.println("Got a number "+ #producerChannel);
 				/* Task 2: Retrieve data from producerChannel and assign it to 'data' */
+				
+				data =  #producerChannel;
+				
 				/* Task 3: emit signal 'toBuffer' with data 'data' */
+				emit toBuffer(data);
 
 				pause; // To ensure that the buffer reaction receives data before reiteration of the loop
 			}
@@ -101,10 +108,17 @@ reaction Buffer(: input int channel producerChannel, output int channel consumer
 			present(bufferNotEmpty){
 
 				/* Task 4: Request data by emitting the signal 'requestData' */
+				
+				emit requestData;
 
 				pause; // Need to delay one tick
 				pause; // another tick to get the feedback signal
 
+				present (fromBuffer){
+					data = #fromBuffer;
+					send consumerChannel(data);
+					System.out.println("buffer data send "+ data);
+				}
 				/* Task 5:
 				*  1. Check the status of the signal 'fromBuffer'
 				*  2. If the signal is present: a) Retrieve data from 'fromBuffer' and assign it to 'data'
@@ -126,6 +140,12 @@ reaction Buffer(: input int channel producerChannel, output int channel consumer
 
 			/* Task 6: If the signal 'toBuffer' is present, push the value of 'toBuffer' to myBuffer (hint use myBuffer.push method) */
 
+			present(toBuffer){
+				myBuffer.push(#toBuffer);
+				System.out.println("to buffer send "+ #toBuffer);
+			} 
+			
+			
 			present(requestData){
 				data = ((Integer)myBuffer.pop()).intValue();
 				emit fromBuffer(data);
